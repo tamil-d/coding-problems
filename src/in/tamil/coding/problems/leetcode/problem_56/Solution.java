@@ -1,9 +1,9 @@
-package in.tamil.coding.problems;
+package in.tamil.coding.problems.leetcode.problem_56;
 
 import java.util.Arrays;
 import java.util.LinkedList;
 
-public class Problem_56_MergeIntervals_Solution {
+class Solution {
     public int[][] merge(int[][] intervals) {
         Arrays.sort(intervals, (a,b) -> Integer.compare(a[0],b[0]));
         LinkedList<int[]> mergedIntervals = new LinkedList<>();
