@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 public class Solution {
-    private final Map<Character, String> phoneDigitsToLetterStringMap = Map.of(
+    private static final Map<Character, String> phoneDigitsToLetterStringMap = Map.of(
             '2', "abc", '3', "def", '4', "ghi", '5', "jkl",
             '6', "mno", '7', "pqrs", '8', "tuv", '9', "wxyz");
 
