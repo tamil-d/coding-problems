@@ -1,6 +1,7 @@
 package in.tamil.coding.problems.leetcode.problem_759_emp_free_time;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -14,14 +15,15 @@ public class Solution {
         if (sortedSchedule.isEmpty()) {
             return result;
         }
-        sortedSchedule.sort((int1, int2) -> int1.start - int2.start);
+        sortedSchedule.sort(Comparator.comparingInt(anInt -> anInt.start));
         LinkedList<Interval> mergedIntervals = new LinkedList<>();
         for (Interval currSch : sortedSchedule) {
             if (mergedIntervals.isEmpty()) {
                 mergedIntervals.add(currSch);
                 continue;
             }
-            Interval lastIntInList = mergedIntervals.getLast();
+            Interval lastIntInList;
+            lastIntInList = mergedIntervals.getLast();
             if (currSch.start <= mergedIntervals.getLast().end) {
 
                 lastIntInList.start = Math.min(currSch.start, lastIntInList.start);
